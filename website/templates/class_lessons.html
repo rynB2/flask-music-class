@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block title %}Class Lessons{% endblock %}
+{% block content %}
+
+
+<h3>Lesson Creation</h3>
+<p>This is the page where you can create lessons for your classroom. Refer to the template at the bottom of the page to see the resulting format.</p>
+
+<form class="row g-3" method="POST" >
+    <div class ="col-md-3">
+        <label for="classroom">Room Code</label>
+        <input type="text" class="form-control" id="classroom" name="classroom" placeholder="enter room code" required>
+    </div>
+    <div class ="col-md-3">
+        <label for="classroom">Lesson Title</label>
+        <input type="text" class="form-control" id="lesson_title" name="lesson_title" placeholder="enter lesson title" required>
+    </div>
+    <div class ="col-md-3">
+        <label for="difficulty">Difficulty</label>
+        <input type="text" class="form-control" id="difficulty" name="difficulty" placeholder="enter difficulty" required>
+    </div>
+    <div class ="col-md-3">
+        <label for="length">Length</label>
+        <input type="text" class="form-control" id="length" name="length" placeholder="enter lesson length (in minutes)" required>
+    </div>   
+    <div class ="col-md-3">
+        <label for="task1">Task 1</label>
+        <input type="text" class="form-control" id="task1" name="task1" placeholder="enter task 1"required>
+    </div>
+    <div class ="col-md-3">
+        <label for="task2">Task 2</label>
+        <input type="text" class="form-control" id="task2" name="task2" placeholder="enter task 2"required>
+    </div>
+    <div class ="col-md-3">
+        <label for="task3">Task 3</label>
+        <input type="text" class="form-control" id="task3" name="task3" placeholder="enter task 3"required>
+    </div>
+    <div class ="col-md-3">
+        <label for="completion_message">Completion Message</label>
+        <input type="text" class="form-control" id="completion_message" name="completion_message" placeholder="enter completion message"required>
+    </div> 
+    <div class ="col-md-12">
+        <label for="lesson">Lesson Content</label>
+        <textarea name="lesson" id="lesson" class="form-control" placeholder="enter lesson text here"></textarea>
+    </div>
+    
+    
+    <div class = "col-md-3">
+        <button type="submit" class="btn btn-primary">Add Lesson</button>
+    </div>
+</form>
+<br>
+
+{% for lesson in user.lessons %}
+<div class="card mb-3">
+    
+    <h3 class="card-header">Lesson: {{lesson.lesson_title}}</h3>
+    <div class="card-body">
+      <h5 class="card-title">Difficulty: {{lesson.difficulty}}</h5>
+      <h6 class="card-subtitle text-muted">Lesson length: {{lesson.length}} minutes</h6>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{lesson.data}} </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Task 1: {{lesson.task1}}</li>
+      <li class="list-group-item">Task 2: {{lesson.task2}}</li>
+      <li class="list-group-item">Task 3: {{lesson.task3}}</li>
+    </ul>
+    <div class="card-body">
+        <p class="card-text">{{lesson.completion_message}}</p>
+      </div>
+</div>
+{% endfor %}
+{% endblock %}

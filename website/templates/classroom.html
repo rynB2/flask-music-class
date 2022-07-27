@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block title %}Classroom{% endblock %}
+{% block content %}
+<form method="POST">
+    <h3 align="center">Join Room</h3>
+    <div class ="form-group">
+        <label for="room_code">Room Code</label>
+        <input type="text" class="form-control" id="room_code" name="room_code" placeholder="enter room code"/>
+    </div>
+     
+    <button type="submit" class="btn btn-primary">Enter</button>
+</form>
+{% endblock %}

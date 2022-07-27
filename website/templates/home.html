@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+{% block content %}
+<br />
+
+<div class ="piano" align="center">
+    
+    <iframe frameborder="5" scrolling="no" src="https://mczak.com/code/piano/pianoframe/" style="border:0px solid #eee; overflow:hidden; width:1000px; height:340px;" width="412"></iframe>
+    <br />
+    <br />
+    
+</div>
+
+<div class="card mb-3">
+    <h3 class="card-header">Lesson 1: Tutorial</h3>
+    <div class="card-body">
+      <h5 class="card-title">Difficulty: Beginner</h5>
+      <h6 class="card-subtitle text-muted">Lesson length: 1 minute(s)</h6>
+    </div>
+    <div class="card-body">
+      <p class="card-text">The leftmost note on the above piano is the note C. Click on it to hear it!<br> 
+        You can also use your keyboard after you have clicked the keyboard. Press the 'J' key to play another note! </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Task 1: Play C (J on keyboard)</li>
+      <li class="list-group-item">Task 2: Play E (L on keyboard)</li>
+      <li class="list-group-item">Task 3: Play G (' on keyboard)</li>
+    </ul>
+    <div class="card-body">
+        <p class="card-text">Congratulations, you just played your first chord! <br>Go to the <a href="/classroom">Classroom</a> page to join a classroom using the room code your teacher provided to access the rest of the lessons!</p>
+    </div>    
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Classroom{% endblock %}
+{% block content %}
+<h1 align=center>Room: {{room}}</h1>
+<h4 align=center>Teacher: Simon Wells</h4>
+<div class ="piano" align="center">
+    
+    <iframe frameborder="5" scrolling="no" src="https://mczak.com/code/piano/pianoframe/" style="border:0px solid #eee; overflow:hidden; width:1000px; height:340px;" width="412"></iframe>
+    <br />
+    <br />
+    
+</div>
+<br>
+{% for lesson in x %}
+    {% if lesson.class_id == room2 %}
+    <div class="card mb-3" id="hello">
+        
+        <h3 class="card-header">Lesson: {{lesson.lesson_title}}</h3>
+        <div class="card-body" id="hello">
+        <h5 class="card-title">Difficulty: {{lesson.difficulty}}</h5>
+        <h6 class="card-subtitle text-muted">Lesson length: {{lesson.length}} minutes</h6>
+        </div>
+        <div class="card-body">
+        <p class="card-text">{{lesson.data}} </p>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Task 1: {{lesson.task1}}</li>
+        <li class="list-group-item">Task 2: {{lesson.task2}}</li>
+        <li class="list-group-item">Task 3: {{lesson.task3}}</li>
+        </ul>
+        <div class="card-body">
+            <p class="card-text">{{lesson.completion_message}}</p>
+    
+            <form action="" method="post">
+                <input class="btn btn-primary" type="submit" name="points" id="points" value="Mark as Complete" />
+            </form>
+            
+        </div>
+    </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
