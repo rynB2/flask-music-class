@@ -1,4 +1,4 @@
-# Advanced Web Technologies Coursework Instructions
+# Flask Music Classroom Instructions
 
 ## Installing the requirements
 
