@@ -1,5 +1,9 @@
 # Flask Music Classroom Instructions
 
+## Main Page Preview
+
+![alt text](https://i.imgur.com/QUy9lLu.png)
+
 ## Installing the requirements
 
 ```bash
